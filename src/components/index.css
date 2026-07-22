@@ -1,0 +1,11 @@
+a {
+  color: #0082c9;
+}
+
+a:hover {
+  color: #006aa3;
+}
+
+* {
+  font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif !important;
+}

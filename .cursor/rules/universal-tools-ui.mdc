@@ -1,0 +1,26 @@
+---
+description: Universal Tools UI vs functionality — original UI, no upstream product identity
+alwaysApply: true
+---
+
+# Universal Tools project rules
+
+## Brand
+- Product name: **Universal Tools** (mark: **UT**)
+- Theme: Nextcloud-inspired (`#0082C9`, `#1CAFFF`, Inter) — do **not** use Nextcloud logos or trademarks
+- Quality and UX are the priority over feature chrome
+- **Never** reintroduce upstream product identity: old product name/logos/favicons, Locize project IDs, hire-me / tip CTAs, sponsor badges, Discord invite for upstream, or their demo domain
+
+## UI vs functionality
+- **UI is original.** Never copy layouts or marketing chrome from `references/upstream`.
+- **Functionality may be copied** from that reference: tool algorithms, `defineTool` metadata, processing pipelines, and route contracts (`/{category}/{path}`).
+- Prefer the **app shell + nested sidebar** navigation.
+
+## Navigation
+- Sidebar modules group tools for UX; Image merges `image-generic` + `png`; PDF is all `pdf` tools; other categories each get their own expandable module.
+- Keep tool route paths and processing logic stable when redesigning chrome.
+
+## Shell
+- Persistent left sidebar on every page (temporary Drawer on mobile)
+- Top bar: UT logo, search, theme, language
+- Dashboard home is clean and modern
