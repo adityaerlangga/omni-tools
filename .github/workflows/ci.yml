@@ -73,5 +73,5 @@ jobs:
           curl -fsS -X POST \
             -H "Authorization: Bearer ${COOLIFY_TOKEN}" \
             -H "Accept: application/json" \
-            "${COOLIFY_URL%/}/api/v1/applications/${COOLIFY_APP_UUID}/deploy?force=true"
+            "${COOLIFY_URL%/}/api/v1/deploy?uuid=${COOLIFY_APP_UUID}&force=true"
           echo "Coolify deploy triggered for ${COOLIFY_APP_UUID}"
