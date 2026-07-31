@@ -174,18 +174,33 @@ export const NAV_MODULE_DEFS: NavModuleDef[] = [
   }
 ];
 
-function shortLabelFor(tool: DefinedTool, t?: (key: string) => string): string {
-  if (SHORT_LABELS[tool.path]) return SHORT_LABELS[tool.path];
-  if (t) {
-    const name = t(tool.name);
-    if (name && name !== tool.name) return name;
-  }
-  // Fallback: last path segment, title-cased
-  const segment = tool.path.split('/').pop() ?? tool.path;
+function titleFromPath(toolPath: string): string {
+  const segment = toolPath.split('/').pop() ?? toolPath;
   return segment
     .split('-')
     .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
     .join(' ');
+}
+
+/** True when a translation result still looks like an unresolved i18n key. */
+function looksLikeI18nKey(value: string, originalKey: string): boolean {
+  if (!value || value === originalKey) return true;
+  // e.g. "video:addAudio.title" or i18next-normalized "video.AddAudio.title"
+  if (/^[a-z]+:[A-Za-z0-9_.]+$/.test(value)) return true;
+  if (
+    /^[a-z]+\.[A-Za-z0-9]+\.(title|description|shortDescription)$/.test(value)
+  )
+    return true;
+  return false;
+}
+
+function shortLabelFor(tool: DefinedTool, t?: (key: string) => string): string {
+  if (SHORT_LABELS[tool.path]) return SHORT_LABELS[tool.path];
+  if (t) {
+    const name = t(tool.name);
+    if (name && !looksLikeI18nKey(name, tool.name)) return name;
+  }
+  return titleFromPath(tool.path);
 }
 
 function sortTools(

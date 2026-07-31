@@ -27,8 +27,9 @@ export default function ModuleOverview() {
   const modules = useMemo(
     () =>
       buildNavModules((key) =>
-        // @ts-ignore dynamic nav label
-        t(`translation:${key}`)
+        // Tool names are already namespaced (e.g. video:addAudio.title)
+        // @ts-ignore dynamic i18n key
+        t(key)
       ),
     [t]
   );
