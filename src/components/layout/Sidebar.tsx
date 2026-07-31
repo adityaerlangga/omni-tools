@@ -74,8 +74,11 @@ function SidebarNavContent({
     <Box
       sx={{
         height: '100%',
+        maxHeight: '100%',
+        minHeight: 0,
         display: 'flex',
         flexDirection: 'column',
+        overflow: 'hidden',
         bgcolor: 'background.sidebar',
         borderRight: 1,
         borderColor: 'divider'
@@ -87,7 +90,12 @@ function SidebarNavContent({
         justifyContent={collapsed ? 'center' : 'space-between'}
         px={collapsed ? 1 : 2}
         py={1.5}
-        sx={{ borderBottom: 1, borderColor: 'divider', minHeight: 56 }}
+        sx={{
+          borderBottom: 1,
+          borderColor: 'divider',
+          minHeight: 56,
+          flexShrink: 0
+        }}
       >
         {!collapsed && (
           <Typography
@@ -116,7 +124,16 @@ function SidebarNavContent({
         )}
       </Stack>
 
-      <Box sx={{ flex: 1, overflowY: 'auto', py: 1 }}>
+      <Box
+        sx={{
+          flex: '1 1 auto',
+          minHeight: 0,
+          overflowY: 'auto',
+          overflowX: 'hidden',
+          overscrollBehavior: 'contain',
+          py: 1
+        }}
+      >
         <List dense disablePadding>
           <ListItemButton
             component={RouterLink}
@@ -248,7 +265,12 @@ export default function Sidebar({
         sx={{
           '& .MuiDrawer-paper': {
             width: SIDEBAR_WIDTH,
-            boxSizing: 'border-box'
+            boxSizing: 'border-box',
+            height: '100%',
+            maxHeight: '100%',
+            overflow: 'hidden',
+            display: 'flex',
+            flexDirection: 'column'
           }
         }}
       >
@@ -263,6 +285,10 @@ export default function Sidebar({
       sx={{
         width,
         flexShrink: 0,
+        alignSelf: 'stretch',
+        height: '100%',
+        minHeight: 0,
+        overflow: 'hidden',
         transition: theme.transitions.create('width', {
           easing: theme.transitions.easing.sharp,
           duration: theme.transitions.duration.enteringScreen
@@ -274,12 +300,17 @@ export default function Sidebar({
         open
         sx={{
           width,
+          height: '100%',
           flexShrink: 0,
           '& .MuiDrawer-paper': {
             width,
             boxSizing: 'border-box',
             position: 'relative',
             height: '100%',
+            maxHeight: '100%',
+            overflow: 'hidden',
+            display: 'flex',
+            flexDirection: 'column',
             border: 'none',
             transition: theme.transitions.create('width', {
               easing: theme.transitions.easing.sharp,
