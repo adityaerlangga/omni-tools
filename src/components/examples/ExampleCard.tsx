@@ -3,7 +3,6 @@ import {
   Card,
   CardContent,
   Stack,
-  TextField,
   Typography,
   useTheme
 } from '@mui/material';
@@ -21,6 +20,33 @@ export interface ExampleCardProps<T> {
   getGroups: GetGroupsType<T> | null;
 }
 
+function SampleBlock({ value }: { value: string }) {
+  return (
+    <Box
+      sx={{
+        width: '100%',
+        px: 1.25,
+        py: 1,
+        borderRadius: 1,
+        border: 1,
+        borderColor: 'divider',
+        bgcolor: 'background.default',
+        fontFamily:
+          'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace',
+        fontSize: 13,
+        lineHeight: 1.5,
+        color: 'text.primary',
+        whiteSpace: 'pre-wrap',
+        wordBreak: 'break-word',
+        maxHeight: 120,
+        overflow: 'auto'
+      }}
+    >
+      {value}
+    </Box>
+  );
+}
+
 export default function ExampleCard<T>({
   title,
   description,
@@ -31,98 +57,47 @@ export default function ExampleCard<T>({
   getGroups
 }: ExampleCardProps<T>) {
   const theme = useTheme();
+
   return (
     <Card
-      raised
+      variant="outlined"
+      elevation={0}
       onClick={() => {
         changeInputResult(sampleText, sampleOptions);
       }}
       sx={{
-        bgcolor: 'background.lightSecondary',
         height: '100%',
-        overflow: 'hidden',
-        borderRadius: 2,
-        transition: 'background-color 0.3s ease',
+        borderRadius: 1,
         cursor: 'pointer',
+        transition: 'border-color 0.2s ease, box-shadow 0.2s ease',
         '&:hover': {
-          boxShadow: `12px 9px 11px 2px ${
-            theme.palette.mode === 'dark' ? theme.palette.grey[900] : '#b8b9be'
-          }, -6px -6px 12px ${theme.palette.mode === 'dark' ? 'black' : '#fff'}`
+          borderColor: 'primary.main',
+          boxShadow:
+            theme.palette.mode === 'dark'
+              ? '0 4px 16px rgba(28, 175, 255, 0.12)'
+              : '0 4px 16px rgba(0, 130, 201, 0.12)'
         }
       }}
     >
-      <CardContent>
-        <Box display="flex" justifyContent="space-between" borderRadius="5px">
-          <Typography variant="h5" component="h2">
-            {title}
-          </Typography>
-        </Box>
-        <Stack direction={'column'} alignItems={'center'} spacing={2}>
-          <Typography variant="body2" color="text.secondary">
-            {description}
-          </Typography>
+      <CardContent sx={{ p: 2, '&:last-child': { pb: 2 } }}>
+        <Typography
+          variant="subtitle1"
+          fontWeight={700}
+          component="h3"
+          mb={0.5}
+        >
+          {title}
+        </Typography>
+        <Typography variant="body2" color="text.secondary" mb={2}>
+          {description}
+        </Typography>
 
-          {sampleText && (
-            <Box
-              sx={{
-                display: 'flex',
-                zIndex: '2',
-                width: '100%',
-                height: '100%',
-                bgcolor: 'transparent',
-                padding: '5px 10px',
-                borderRadius: '5px',
-                boxShadow:
-                  'inset 2px 2px 5px #b8b9be, inset -3px -3px 7px #fff;'
-              }}
-            >
-              <TextField
-                value={sampleText}
-                disabled
-                fullWidth
-                multiline
-                sx={{
-                  '& .MuiOutlinedInput-root': {
-                    zIndex: '-1',
-                    '& fieldset': {
-                      border: 'none'
-                    }
-                  }
-                }}
-              />
-            </Box>
-          )}
-
-          <ArrowDownwardIcon />
-          <Box
-            sx={{
-              display: 'flex',
-              zIndex: '2',
-              width: '100%',
-              height: '100%',
-              bgcolor: 'transparent',
-              padding: '5px 10px',
-              borderRadius: '5px',
-              cursor: 'pointer',
-              boxShadow: 'inset 2px 2px 5px #b8b9be, inset -3px -3px 7px #fff;'
-            }}
-          >
-            <TextField
-              value={sampleResult}
-              disabled
-              fullWidth
-              multiline
-              sx={{
-                '& .MuiOutlinedInput-root': {
-                  zIndex: '-1',
-                  '& fieldset': {
-                    border: 'none'
-                  }
-                }
-              }}
-            />
-          </Box>
-
+        <Stack direction="column" alignItems="center" spacing={1.25}>
+          {sampleText && <SampleBlock value={sampleText} />}
+          <ArrowDownwardIcon
+            sx={{ color: 'primary.main', fontSize: 20, opacity: 0.8 }}
+          />
+          <SampleBlock value={sampleResult} />
           <ExampleOptions options={sampleOptions} getGroups={getGroups} />
         </Stack>
       </CardContent>

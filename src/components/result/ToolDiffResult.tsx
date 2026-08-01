@@ -7,6 +7,7 @@ import { globalInputHeight } from '../../config/uiConfig';
 import { useTranslation } from 'react-i18next';
 import { stripAndDecodeHtml } from 'utils/string';
 import DOMPurify from 'dompurify';
+import { ContentCard } from '../ui/ContentCard';
 
 const DOMPURIFY_CONFIG = {
   ALLOWED_TAGS: ['div', 'span', 'br'],
@@ -53,7 +54,7 @@ export default function ToolDiffResult({
 
   const sharedBoxSx = {
     p: 2,
-    backgroundColor: 'background.paper',
+    backgroundColor: 'background.default',
     border: '1px solid',
     borderColor: 'divider',
     borderRadius: 1,
@@ -64,7 +65,7 @@ export default function ToolDiffResult({
   } as const;
 
   return (
-    <Box>
+    <ContentCard sx={{ p: 2, height: '100%' }}>
       <InputHeader title={title} />
       {loading ? (
         <Box
@@ -76,8 +77,8 @@ export default function ToolDiffResult({
             height: globalInputHeight
           }}
         >
-          <CircularProgress />
-          <Typography variant="body2" sx={{ mt: 2 }}>
+          <CircularProgress size={28} />
+          <Typography variant="body2" sx={{ mt: 2 }} color="text.secondary">
             {t('toolTextResult.loading')}
           </Typography>
         </Box>
@@ -108,6 +109,6 @@ export default function ToolDiffResult({
         <Box sx={sharedBoxSx}>{value}</Box>
       )}
       <ResultFooter handleCopy={handleCopy} handleDownload={handleDownload} />
-    </Box>
+    </ContentCard>
   );
 }

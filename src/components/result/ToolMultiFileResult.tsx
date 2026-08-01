@@ -79,8 +79,9 @@ export default function ToolMultiFileResult({
           flexDirection: 'column',
           gap: 2,
           border: 1,
-          borderRadius: 2,
-          boxShadow: '5',
+          borderRadius: 1,
+          boxShadow: 'none',
+          borderColor: 'divider',
           bgcolor: 'background.paper',
           alignItems: 'center',
           p: 2

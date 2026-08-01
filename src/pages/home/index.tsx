@@ -66,12 +66,12 @@ export default function Home() {
       <Box
         sx={{
           mb: 4,
-          p: { xs: 2.5, md: 4 },
-          borderRadius: 3,
+          p: { xs: 2.5, md: 3.5 },
+          borderRadius: 1,
           background:
             theme.palette.mode === 'dark'
               ? `linear-gradient(135deg, ${theme.palette.background.paper} 0%, #1a2330 100%)`
-              : `linear-gradient(135deg, #FFFFFF 0%, #EBF5FF 100%)`,
+              : `linear-gradient(160deg, #FFFFFF 0%, #F3F9FD 55%, #E8F4FC 100%)`,
           border: 1,
           borderColor: 'divider'
         }}
@@ -105,7 +105,10 @@ export default function Home() {
             {bookmarkedTools.map((tool) =>
               tool ? (
                 <Grid item xs={12} sm={6} md={3} key={tool.path}>
-                  <Card variant="outlined" sx={{ height: '100%' }}>
+                  <Card
+                    variant="outlined"
+                    sx={{ height: '100%', borderRadius: 1 }}
+                  >
                     <CardActionArea
                       onClick={() => navigate('/' + tool.path)}
                       sx={{ height: '100%' }}
@@ -147,6 +150,7 @@ export default function Home() {
                   variant="outlined"
                   sx={{
                     height: '100%',
+                    borderRadius: 1,
                     transition: 'border-color 0.2s, box-shadow 0.2s',
                     '&:hover': {
                       borderColor: 'primary.main',
@@ -159,11 +163,26 @@ export default function Home() {
                     sx={{ height: '100%' }}
                   >
                     <CardContent>
-                      <Icon
-                        icon={tool.icon}
-                        width={32}
-                        color={theme.palette.primary.main}
-                      />
+                      <Box
+                        sx={{
+                          width: 36,
+                          height: 36,
+                          borderRadius: 1,
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          bgcolor:
+                            theme.palette.mode === 'dark'
+                              ? 'rgba(28,175,255,0.12)'
+                              : 'rgba(0,130,201,0.1)'
+                        }}
+                      >
+                        <Icon
+                          icon={tool.icon}
+                          width={20}
+                          color={theme.palette.primary.main}
+                        />
+                      </Box>
                       <Typography fontWeight={700} mt={1.5} fontSize={15}>
                         {t(tool.name)}
                       </Typography>
@@ -192,6 +211,7 @@ export default function Home() {
                   variant="outlined"
                   sx={{
                     height: '100%',
+                    borderRadius: 1,
                     '&:hover': {
                       borderColor: 'primary.main',
                       boxShadow: '0 4px 16px rgba(0, 130, 201, 0.12)'

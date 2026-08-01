@@ -16,16 +16,21 @@ const TextFieldWithDesc = ({
   ...props
 }: TextFieldProps & OwnProps) => {
   return (
-    <Box mb={3}>
+    <Box mb={2}>
       <TextField
         placeholder={placeholder}
-        sx={{ backgroundColor: 'background.paper' }}
+        size="small"
+        fullWidth
+        sx={{
+          backgroundColor: 'background.paper',
+          '& .MuiOutlinedInput-root': { borderRadius: 1 }
+        }}
         value={value}
         onChange={(event) => onOwnChange(event.target.value)}
         {...props}
       />
       {description && (
-        <Typography fontSize={12} mt={1}>
+        <Typography fontSize={12} mt={0.75} color="text.secondary">
           {description}
         </Typography>
       )}

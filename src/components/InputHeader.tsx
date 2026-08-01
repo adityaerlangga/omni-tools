@@ -1,10 +1,5 @@
-import Typography from '@mui/material/Typography';
-import React from 'react';
+import { ContentSectionTitle } from './ui/ContentCard';
 
 export default function InputHeader({ title }: { title: string }) {
-  return (
-    <Typography mb={1} fontSize={30} color={'primary'}>
-      {title}
-    </Typography>
-  );
+  return <ContentSectionTitle>{title}</ContentSectionTitle>;
 }

@@ -17,17 +17,33 @@ export default function InputFooter({
   const { t } = useTranslation();
 
   return (
-    <Stack mt={1} direction={'row'} spacing={2}>
-      <Button onClick={handleImport} startIcon={<PublishIcon />}>
+    <Stack mt={1.5} direction="row" spacing={1} flexWrap="wrap" useFlexGap>
+      <Button
+        size="small"
+        variant="outlined"
+        onClick={handleImport}
+        startIcon={<PublishIcon />}
+      >
         {t('inputFooter.importFromFile')}
       </Button>
       {handleCopy && (
-        <Button onClick={handleCopy} startIcon={<ContentPasteIcon />}>
+        <Button
+          size="small"
+          variant="outlined"
+          onClick={handleCopy}
+          startIcon={<ContentPasteIcon />}
+        >
           {t('inputFooter.copyToClipboard')}
         </Button>
       )}
       {handleClear && (
-        <Button onClick={handleClear} startIcon={<ClearIcon />}>
+        <Button
+          size="small"
+          variant="text"
+          color="inherit"
+          onClick={handleClear}
+          startIcon={<ClearIcon />}
+        >
           {t('inputFooter.clear')}
         </Button>
       )}

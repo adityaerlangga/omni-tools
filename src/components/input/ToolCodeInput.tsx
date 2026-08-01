@@ -9,6 +9,7 @@ import {
   globalInputHeight,
   codeInputHeightOffset
 } from '../../config/uiConfig';
+import { ContentCard } from '../ui/ContentCard';
 
 export default function ToolCodeInput({
   value,
@@ -54,10 +55,10 @@ export default function ToolCodeInput({
   };
 
   return (
-    <Box>
+    <ContentCard sx={{ p: 2, height: '100%' }}>
       <InputHeader title={title || t('toolTextInput.input')} />
       <Box
-        height={`${globalInputHeight + codeInputHeightOffset}px`} // The +codeInputHeightOffset compensates for internal padding/border differences between Monaco Editor and MUI TextField
+        height={`${globalInputHeight + codeInputHeightOffset}px`}
         sx={{
           display: 'flex',
           flexDirection: 'column'
@@ -68,17 +69,16 @@ export default function ToolCodeInput({
             height: '100%',
             display: 'flex',
             flexDirection: 'column',
-            backgroundColor: 'background.paper',
+            backgroundColor: 'background.default',
+            borderRadius: 1,
+            overflow: 'hidden',
             '.monaco-editor': {
               height: '100% !important',
               outline: 'none !important',
               '.overflow-guard': {
                 height: '100% !important',
-                border:
-                  theme.palette.mode === 'light'
-                    ? '1px solid rgba(0, 0, 0, 0.23)'
-                    : '1px solid rgba(255, 255, 255, 0.23)',
-                borderRadius: 1,
+                border: `1px solid ${theme.palette.divider}`,
+                borderRadius: `${theme.shape.borderRadius}px`,
                 transition: theme.transitions.create(
                   ['border-color', 'background-color'],
                   {
@@ -87,7 +87,7 @@ export default function ToolCodeInput({
                 )
               },
               '&:hover .overflow-guard': {
-                borderColor: theme.palette.text.primary
+                borderColor: theme.palette.primary.main
               }
             },
             '.decorationsOverviewRuler': {
@@ -121,6 +121,6 @@ export default function ToolCodeInput({
           onChange={handleFileChange}
         />
       </Box>
-    </Box>
+    </ContentCard>
   );
 }

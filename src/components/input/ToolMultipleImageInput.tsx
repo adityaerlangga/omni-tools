@@ -114,8 +114,9 @@ export default function ToolMultiImageInput({
           width: '100%',
           height: '300px',
           border: value?.length ? 0 : 1,
-          borderRadius: 2,
-          boxShadow: '5',
+          borderRadius: 1,
+          boxShadow: 'none',
+          borderColor: 'divider',
           bgcolor: 'background.paper',
           position: 'relative'
         }}

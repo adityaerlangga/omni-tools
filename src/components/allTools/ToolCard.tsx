@@ -1,8 +1,8 @@
 import {
   Box,
   Card,
+  CardActionArea,
   CardContent,
-  Link,
   Stack,
   Typography,
   useTheme
@@ -20,50 +20,66 @@ export default function ToolCard({
 }: ToolCardProps) {
   const theme = useTheme();
   const navigate = useNavigate();
+
   return (
     <Card
-      onClick={() => navigate(link)}
-      raised
+      variant="outlined"
+      elevation={0}
       sx={{
-        borderRadius: 2,
-        bgcolor: 'background.darkSecondary',
-        borderColor: 'background.darkSecondary',
-        color: '#fff',
-        boxShadow:
-          theme.palette.mode === 'dark'
-            ? null
-            : '6px 6px 12px #b8b9be, -6px -6px 12px #fff',
-        cursor: 'pointer',
+        borderRadius: 1,
         height: '100%',
+        transition: 'border-color 0.2s ease, box-shadow 0.2s ease',
         '&:hover': {
-          transform: 'scale(1.05)'
+          borderColor: 'primary.main',
+          boxShadow:
+            theme.palette.mode === 'dark'
+              ? '0 4px 16px rgba(28, 175, 255, 0.12)'
+              : '0 4px 16px rgba(0, 130, 201, 0.12)'
         }
       }}
     >
-      <CardContent>
-        <Box
-          display="flex"
-          justifyContent="space-between"
-          sx={{
-            paddingBottom: 1,
-            borderBottomWidth: 1,
-            borderColor: '#ffffff70'
-          }}
-        >
-          <Stack direction={'row'} spacing={2} alignItems={'center'}>
-            <Icon icon={icon} fontSize={25} />
-            <Typography variant="h5" component="h2">
-              {title}
-            </Typography>
+      <CardActionArea
+        onClick={() => navigate(link)}
+        sx={{ height: '100%', alignItems: 'stretch' }}
+      >
+        <CardContent sx={{ p: 2, height: '100%', '&:last-child': { pb: 2 } }}>
+          <Stack
+            direction="row"
+            justifyContent="space-between"
+            alignItems="flex-start"
+            spacing={1}
+            mb={1.25}
+          >
+            <Stack direction="row" spacing={1.25} alignItems="center">
+              <Box
+                sx={{
+                  width: 36,
+                  height: 36,
+                  borderRadius: 1,
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  bgcolor:
+                    theme.palette.mode === 'dark'
+                      ? 'rgba(28,175,255,0.12)'
+                      : 'rgba(0,130,201,0.1)',
+                  color: 'primary.main',
+                  flexShrink: 0
+                }}
+              >
+                <Icon icon={icon} width={20} />
+              </Box>
+              <Typography variant="subtitle1" fontWeight={700} component="h2">
+                {title}
+              </Typography>
+            </Stack>
+            <ChevronRightIcon sx={{ color: 'text.secondary', mt: 0.25 }} />
           </Stack>
-          <Link href={link} underline="none" sx={{ color: '#fff' }}>
-            <ChevronRightIcon />
-          </Link>
-        </Box>
-        <Typography variant="body2" mt={2} color="#fff">
-          {description}
-        </Typography>
-      </CardContent>
+          <Typography variant="body2" color="text.secondary" lineHeight={1.5}>
+            {description}
+          </Typography>
+        </CardContent>
+      </CardActionArea>
     </Card>
   );
 }

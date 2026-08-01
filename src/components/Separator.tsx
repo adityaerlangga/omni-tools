@@ -2,21 +2,22 @@ import { Divider } from '@mui/material';
 import React from 'react';
 
 type SeparatorProps = {
-  backgroundColor: string;
-  margin: string;
+  backgroundColor?: string;
+  margin?: string | number;
 };
 
-export default function Separator({ backgroundColor, margin }: SeparatorProps) {
+export default function Separator({
+  backgroundColor = 'divider',
+  margin = '32px'
+}: SeparatorProps) {
   return (
     <Divider
       orientation="horizontal"
       variant="fullWidth"
-      className="my-4"
       sx={{
-        backgroundColor: backgroundColor,
-        height: '2px',
-        marginTop: margin,
-        marginBottom: margin
+        borderColor: backgroundColor,
+        borderBottomWidth: '1px',
+        my: margin
       }}
     />
   );

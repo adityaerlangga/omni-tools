@@ -13,10 +13,18 @@ import { ToolCategory } from '@tools/defineTool';
 import { validNamespaces } from '../i18n';
 
 const StyledButton = styled(Button)(({ theme }) => ({
+  borderRadius: theme.shape.borderRadius,
+  borderColor: theme.palette.divider,
   backgroundColor: theme.palette.background.paper,
+  color: theme.palette.text.primary,
+  fontWeight: 600,
   '&:hover': {
-    backgroundColor: theme.palette.primary.main,
-    color: theme.palette.primary.contrastText
+    borderColor: theme.palette.primary.main,
+    backgroundColor:
+      theme.palette.mode === 'dark'
+        ? 'rgba(28,175,255,0.08)'
+        : 'rgba(0,130,201,0.06)',
+    color: theme.palette.primary.main
   }
 }));
 
@@ -47,11 +55,11 @@ function ToolLinks() {
   };
 
   return (
-    <Grid container spacing={1.5} mt={1}>
+    <Grid container spacing={1} mt={1.5}>
       {isMd && (
-        <Grid item xs={12} sm={6}>
+        <Grid item xs="auto">
           <StyledButton
-            fullWidth
+            size="small"
             variant="outlined"
             onClick={() => scrollToElement('tool')}
           >
@@ -60,9 +68,9 @@ function ToolLinks() {
         </Grid>
       )}
       {examplesVisible && (
-        <Grid item xs={12} sm={6}>
+        <Grid item xs="auto">
           <StyledButton
-            fullWidth
+            size="small"
             variant="outlined"
             onClick={() => scrollToElement('examples')}
           >
@@ -110,29 +118,29 @@ export default function ToolHeader({
             {icon && (
               <Box
                 sx={{
-                  width: 48,
-                  height: 48,
-                  borderRadius: 2,
+                  width: 44,
+                  height: 44,
+                  borderRadius: 1,
+                  border: 1,
+                  borderColor: 'divider',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  bgcolor:
-                    theme.palette.mode === 'dark'
-                      ? 'rgba(28,175,255,0.12)'
-                      : 'rgba(0,130,201,0.1)'
+                  bgcolor: 'background.paper'
                 }}
               >
                 <Icon
                   icon={icon}
-                  width={28}
+                  width={24}
                   color={theme.palette.primary.main}
                 />
               </Box>
             )}
-            <Typography variant="h5" fontWeight={700} color="primary.main">
+            <Typography variant="h5" fontWeight={700} color="text.primary">
               {title}
             </Typography>
             <IconButton
+              size="small"
               onClick={() => {
                 toggleBookmarked(path);
                 setBookmarked(!bookmarked);
@@ -140,7 +148,7 @@ export default function ToolHeader({
               aria-label="bookmark"
             >
               <Icon
-                width={24}
+                width={22}
                 color={
                   bookmarked
                     ? theme.palette.primary.main
@@ -150,7 +158,12 @@ export default function ToolHeader({
               />
             </IconButton>
           </Stack>
-          <Typography mt={1.5} color="text.secondary" fontSize={15}>
+          <Typography
+            mt={1.25}
+            color="text.secondary"
+            fontSize={14.5}
+            maxWidth={720}
+          >
             {description}
           </Typography>
           <ToolLinks />

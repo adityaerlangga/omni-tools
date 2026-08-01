@@ -7,6 +7,7 @@ import { replaceSpecialCharacters } from '@utils/string';
 import mime from 'mime';
 import { globalInputHeight } from '../../config/uiConfig';
 import { useTranslation } from 'react-i18next';
+import { ContentCard } from '../ui/ContentCard';
 
 export default function ToolTextResult({
   title = 'Result',
@@ -49,7 +50,7 @@ export default function ToolTextResult({
     window.URL.revokeObjectURL(url);
   };
   return (
-    <Box>
+    <ContentCard sx={{ p: 2, height: '100%' }}>
       <InputHeader title={title || t('toolTextResult.result')} />
       {loading ? (
         <Box
@@ -61,8 +62,8 @@ export default function ToolTextResult({
             height: globalInputHeight
           }}
         >
-          <CircularProgress />
-          <Typography variant="body2" sx={{ mt: 2 }}>
+          <CircularProgress size={28} />
+          <Typography variant="body2" sx={{ mt: 2 }} color="text.secondary">
             {t('toolTextResult.loading')}
           </Typography>
         </Box>
@@ -73,16 +74,19 @@ export default function ToolTextResult({
           }
           fullWidth
           multiline
+          rows={10}
           sx={{
-            '&.MuiTextField-root': {
-              backgroundColor: 'background.paper'
+            '& .MuiOutlinedInput-root': {
+              borderRadius: 1,
+              bgcolor: 'background.default',
+              fontSize: 14,
+              lineHeight: 1.55
             }
           }}
-          rows={10}
           inputProps={{ 'data-testid': 'text-result' }}
         />
       )}
       <ResultFooter handleCopy={handleCopy} handleDownload={handleDownload} />
-    </Box>
+    </ContentCard>
   );
 }
