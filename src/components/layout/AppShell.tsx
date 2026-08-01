@@ -36,7 +36,15 @@ export default function AppShell({
         onChangeMode={onChangeMode}
         onMenuClick={() => setMobileOpen(true)}
       />
-      <Box sx={{ display: 'flex', flex: 1, overflow: 'hidden' }}>
+      <Box
+        sx={{
+          display: 'flex',
+          flex: 1,
+          minHeight: 0,
+          overflow: 'hidden',
+          height: `calc(100vh - ${TOPBAR_HEIGHT}px)`
+        }}
+      >
         <Sidebar
           mobileOpen={mobileOpen}
           onMobileClose={() => setMobileOpen(false)}
@@ -47,8 +55,9 @@ export default function AppShell({
           component="main"
           sx={{
             flex: 1,
+            minWidth: 0,
+            minHeight: 0,
             overflow: 'auto',
-            height: `calc(100vh - ${TOPBAR_HEIGHT}px)`,
             bgcolor: 'background.default'
           }}
         >
