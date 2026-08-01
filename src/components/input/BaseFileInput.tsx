@@ -13,6 +13,7 @@ import { CustomSnackBarContext } from '../../contexts/CustomSnackBarContext';
 import greyPattern from '@assets/grey-pattern.png';
 import { isArray } from 'lodash';
 import { useTranslation } from 'react-i18next';
+import { ContentCard } from '../ui/ContentCard';
 
 interface BaseFileInputComponentProps extends BaseFileInputProps {
   children: (props: { preview: string | undefined }) => ReactNode;
@@ -143,7 +144,7 @@ export default function BaseFileInput({
   }, [onChange]);
 
   return (
-    <Box>
+    <ContentCard sx={{ p: 2, height: '100%' }}>
       <InputHeader
         title={title || 'Input ' + type.charAt(0).toUpperCase() + type.slice(1)}
       />
@@ -151,14 +152,16 @@ export default function BaseFileInput({
         sx={{
           width: '100%',
           height: globalInputHeight,
-          border: preview ? 0 : 1,
-          borderRadius: 2,
-          boxShadow: '5',
-          bgcolor: 'background.paper',
+          border: 1,
+          borderRadius: 1,
+          boxShadow: 'none',
+          bgcolor: 'background.default',
           position: 'relative',
-          borderColor: isDragging ? theme.palette.primary.main : undefined,
+          overflow: 'hidden',
+          borderColor: isDragging ? 'primary.main' : 'divider',
           borderWidth: isDragging ? 2 : 1,
-          borderStyle: isDragging ? 'dashed' : 'solid'
+          borderStyle: isDragging ? 'dashed' : 'solid',
+          transition: 'border-color 0.15s ease'
         }}
         onDrop={handleDrop}
         onDragOver={handleDragOver}
@@ -229,6 +232,6 @@ export default function BaseFileInput({
         onChange={handleFileChange}
         multiple={false}
       />
-    </Box>
+    </ContentCard>
   );
 }

@@ -1,9 +1,10 @@
-import { Box, TextField } from '@mui/material';
+import { TextField } from '@mui/material';
 import React, { useContext, useRef } from 'react';
 import { CustomSnackBarContext } from '../../contexts/CustomSnackBarContext';
 import InputHeader from '../InputHeader';
 import InputFooter from './InputFooter';
 import { useTranslation } from 'react-i18next';
+import { ContentCard } from '../ui/ContentCard';
 
 export default function ToolTextInput({
   value,
@@ -46,7 +47,7 @@ export default function ToolTextInput({
     fileInputRef.current?.click();
   };
   return (
-    <Box>
+    <ContentCard sx={{ p: 2, height: '100%' }}>
       <InputHeader title={title || t('toolTextInput.input')} />
       <TextField
         value={value}
@@ -56,8 +57,11 @@ export default function ToolTextInput({
         rows={10}
         placeholder={placeholder || t('toolTextInput.placeholder')}
         sx={{
-          '&.MuiTextField-root': {
-            backgroundColor: 'background.paper'
+          '& .MuiOutlinedInput-root': {
+            borderRadius: 1,
+            bgcolor: 'background.default',
+            fontSize: 14,
+            lineHeight: 1.55
           }
         }}
         inputProps={{
@@ -72,6 +76,6 @@ export default function ToolTextInput({
         style={{ display: 'none' }}
         onChange={handleFileChange}
       />
-    </Box>
+    </ContentCard>
   );
 }

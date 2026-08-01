@@ -113,7 +113,7 @@ export default function ToolContent<T extends FormikValues, I>({
 
               {exampleCards && exampleCards.length > 0 && (
                 <>
-                  <Separator backgroundColor="#5581b5" margin="50px" />
+                  <Separator backgroundColor="divider" margin="32px" />
                   <ToolExamples
                     title={title}
                     exampleCards={exampleCards}

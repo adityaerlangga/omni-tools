@@ -37,14 +37,48 @@ const sharedThemeOptions: ThemeOptions = {
     }
   },
   shape: {
-    borderRadius: 8
+    // Small radius — Nextcloud-like cards, not pill-soft
+    borderRadius: 6
   },
   zIndex: { snackbar: 100000 },
   components: {
+    MuiCard: {
+      defaultProps: {
+        variant: 'outlined',
+        elevation: 0
+      },
+      styleOverrides: {
+        root: {
+          borderRadius: 6,
+          boxShadow: 'none'
+        }
+      }
+    },
+    MuiPaper: {
+      styleOverrides: {
+        outlined: {
+          borderRadius: 6
+        }
+      }
+    },
+    MuiButton: {
+      styleOverrides: {
+        root: {
+          borderRadius: 6
+        }
+      }
+    },
+    MuiOutlinedInput: {
+      styleOverrides: {
+        root: {
+          borderRadius: 6
+        }
+      }
+    },
     MuiListItemButton: {
       styleOverrides: {
         root: {
-          borderRadius: 8,
+          borderRadius: 6,
           marginLeft: 8,
           marginRight: 8,
           '&.Mui-selected': {
@@ -117,20 +151,27 @@ export const lightTheme = createTheme({
     },
     MuiButton: {
       styleOverrides: {
+        root: {
+          borderRadius: 6
+        },
         contained: {
           color: nextcloud.white,
           backgroundColor: nextcloud.blue,
-          backgroundImage: `linear-gradient(45deg, ${nextcloud.blue}, ${nextcloud.blueLight})`,
+          backgroundImage: 'none',
           boxShadow: 'none',
           '&:hover': {
             backgroundColor: nextcloud.blueDark,
-            backgroundImage: `linear-gradient(45deg, ${nextcloud.blueDark}, ${nextcloud.blue})`,
-            boxShadow: '0 2px 8px rgba(0, 130, 201, 0.35)'
+            backgroundImage: 'none',
+            boxShadow: '0 2px 8px rgba(0, 130, 201, 0.28)'
           }
         },
         outlined: {
-          borderColor: nextcloud.blue,
-          color: nextcloud.blue
+          borderColor: nextcloud.gray200,
+          color: nextcloud.blue,
+          '&:hover': {
+            borderColor: nextcloud.blue,
+            backgroundColor: 'rgba(0, 130, 201, 0.04)'
+          }
         }
       }
     },
@@ -195,15 +236,25 @@ export const darkTheme = createTheme({
     },
     MuiButton: {
       styleOverrides: {
+        root: {
+          borderRadius: 6
+        },
         contained: {
           color: nextcloud.white,
           backgroundColor: nextcloud.blue,
-          backgroundImage: `linear-gradient(45deg, ${nextcloud.blue}, ${nextcloud.blueLight})`,
+          backgroundImage: 'none',
           boxShadow: 'none',
           '&:hover': {
             backgroundColor: nextcloud.blueLight,
-            backgroundImage: `linear-gradient(45deg, ${nextcloud.blueDark}, ${nextcloud.blueLight})`,
-            boxShadow: '0 2px 8px rgba(28, 175, 255, 0.35)'
+            backgroundImage: 'none',
+            boxShadow: '0 2px 8px rgba(28, 175, 255, 0.28)'
+          }
+        },
+        outlined: {
+          borderColor: '#2A3034',
+          '&:hover': {
+            borderColor: nextcloud.blueLight,
+            backgroundColor: 'rgba(28, 175, 255, 0.08)'
           }
         }
       }
@@ -230,7 +281,7 @@ export const darkTheme = createTheme({
     MuiListItemButton: {
       styleOverrides: {
         root: {
-          borderRadius: 8,
+          borderRadius: 6,
           marginLeft: 8,
           marginRight: 8,
           '&.Mui-selected': {
