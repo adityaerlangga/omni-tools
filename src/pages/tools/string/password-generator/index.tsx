@@ -9,6 +9,12 @@ import { ToolComponentProps } from '@tools/defineTool';
 import { GetGroupsType } from '@components/options/ToolOptions';
 import { CardExampleType } from '@components/examples/ToolExamples';
 import { useTranslation } from 'react-i18next';
+import {
+  clampLengthInput,
+  MAX_PASSWORD_LENGTH,
+  MIN_PASSWORD_LENGTH,
+  sanitizeLengthInput
+} from './lengthInput';
 
 const exampleCards: CardExampleType<InitialValuesType>[] = [
   {
@@ -78,24 +84,19 @@ export default function PasswordGenerator({ title }: ToolComponentProps) {
             placeholder={t('passwordGenerator.lengthPlaceholder')}
             value={values.length}
             onOwnChange={(val) => {
-              const length = Number(val);
-
-              if (length > 256) {
-                updateField('length', '256');
-                return;
-              }
-
-              if (length < 4 && val !== '') {
-                updateField('length', '4');
-                return;
-              }
-
-              updateField('length', val);
+              const next = sanitizeLengthInput(val);
+              if (next !== null) updateField('length', next);
+            }}
+            onBlur={(event) => {
+              updateField(
+                'length',
+                clampLengthInput((event.target as HTMLInputElement).value)
+              );
             }}
             type="number"
             inputProps={{
-              min: 4,
-              max: 256
+              min: MIN_PASSWORD_LENGTH,
+              max: MAX_PASSWORD_LENGTH
             }}
           />
 
