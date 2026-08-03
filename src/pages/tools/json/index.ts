@@ -7,6 +7,10 @@ import { tool as escapeJson } from './escape-json/meta';
 import { tool as jsonComparison } from './json-comparison/meta';
 import { tool as sortJson } from './sort/meta';
 import { tool as jsonToCsv } from './json-to-csv/meta';
+import { tool as yamlToJson } from './yaml-to-json/meta';
+import { tool as jsonToYaml } from './json-to-yaml/meta';
+import { tool as yamlFormatter } from './yaml-formatter/meta';
+import { tool as fakeJson } from './fake-json/meta';
 
 export const jsonTools = [
   validateJson,
@@ -15,6 +19,10 @@ export const jsonTools = [
   jsonStringify,
   jsonToXml,
   jsonToCsv,
+  yamlToJson,
+  jsonToYaml,
+  yamlFormatter,
+  fakeJson,
   escapeJson,
   jsonComparison,
   sortJson

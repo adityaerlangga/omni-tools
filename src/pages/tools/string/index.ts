@@ -26,6 +26,8 @@ import { tool as stringUrlEditor } from './url-editor/meta';
 import { tool as stringCompare } from './text-compare/meta';
 import { tool as stringUnicode } from './unicode/meta';
 import { tool as stringEmailExtractor } from './email-extractor/meta';
+import { tool as stringSqlFormatter } from './sql-formatter/meta';
+import { tool as stringMarkdownPreview } from './markdown-preview/meta';
 
 export const stringTools = [
   stringSplit,
@@ -55,5 +57,7 @@ export const stringTools = [
   stringHiddenCharacterDetector,
   stringEmailExtractor,
   stringCompare,
-  stringSlugGenerator
+  stringSlugGenerator,
+  stringSqlFormatter,
+  stringMarkdownPreview
 ];
