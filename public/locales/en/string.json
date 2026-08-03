@@ -390,5 +390,34 @@
       "charLevel": "Character level",
       "levelDesc": "Choose how detailed the comparison should be. Word level highlights changes by words, while character level detects more granular differences."
     }
+  },
+  "sqlFormatter": {
+    "title": "SQL Formatter",
+    "description": "Beautify SQL queries with dialect-aware formatting. Runs entirely in your browser.",
+    "shortDescription": "Format and beautify SQL",
+    "longDescription": "Paste a SQL statement and get clean indentation with keyword casing. Choose dialects such as MySQL, PostgreSQL, SQLite, and more.",
+    "inputTitle": "Input SQL",
+    "resultTitle": "Formatted SQL",
+    "optionsTitle": "Formatting Options",
+    "languageDescription": "SQL dialect used for parsing and formatting",
+    "tabWidthDescription": "Spaces per indentation level when not using tabs",
+    "useTabsTitle": "Use tabs",
+    "useTabsDescription": "Indent with tab characters instead of spaces",
+    "keywordCaseDescription": "How SQL keywords should be cased in the output",
+    "toolInfo": {
+      "title": "What is {{title}}?"
+    }
+  },
+  "markdownPreview": {
+    "title": "Markdown Preview",
+    "description": "Render Markdown to a sanitized HTML preview locally in your browser.",
+    "shortDescription": "Preview Markdown as HTML",
+    "longDescription": "Write or paste Markdown and instantly preview the rendered HTML. Output is sanitized with DOMPurify to reduce XSS risk from untrusted content.",
+    "inputTitle": "Markdown Input",
+    "resultTitle": "Preview",
+    "emptyPreview": "Rendered preview will appear here.",
+    "toolInfo": {
+      "title": "What is {{title}}?"
+    }
   }
 }

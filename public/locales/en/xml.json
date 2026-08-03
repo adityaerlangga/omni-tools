@@ -34,5 +34,24 @@
       "description": "This tool allows you to view XML data in a hierarchical tree format, making it easier to explore and understand the structure of XML documents.",
       "title": "XML Viewer"
     }
+  },
+  "xmlToJson": {
+    "title": "XML to JSON",
+    "description": "Convert XML documents into JSON objects. Attributes and nested elements are mapped client-side.",
+    "shortDescription": "Convert XML to JSON",
+    "longDescription": "Parse XML with fast-xml-parser and produce pretty JSON without sending data to a server. Toggle attribute inclusion and indentation style.",
+    "inputTitle": "Input XML",
+    "resultTitle": "JSON Output",
+    "indentation": "Indentation",
+    "useSpaces": "Use Spaces",
+    "useSpacesDescription": "Indent JSON output with spaces",
+    "useTabs": "Use Tabs",
+    "useTabsDescription": "Indent JSON output with tabs.",
+    "optionsTitle": "Conversion Options",
+    "includeAttributesTitle": "Include attributes",
+    "includeAttributesDescription": "Map XML attributes into JSON keys prefixed with @_",
+    "toolInfo": {
+      "title": "What is {{title}}?"
+    }
   }
 }
