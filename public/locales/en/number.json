@@ -28,6 +28,55 @@
       "to": "Select the unit you want the input values to be converted into."
     }
   },
+  "chmodCalculator": {
+    "title": "Chmod Calculator",
+    "description": "Build Unix file permissions with owner/group/other read-write-execute checkboxes and get octal and symbolic output.",
+    "shortDescription": "Calculate Unix chmod octal and symbolic modes",
+    "permissionsTitle": "Permissions",
+    "owner": "Owner (u)",
+    "group": "Group (g)",
+    "other": "Other (o)",
+    "resultTitle": "chmod Result",
+    "toolInfo": {
+      "title": "What is a Chmod Calculator?",
+      "description": "Unix file permissions control who can read, write, or execute a file. This calculator turns checkbox selections for owner, group, and others into the familiar octal (e.g. 755) and symbolic (e.g. -rwxr-xr-x) forms used with chmod."
+    }
+  },
+  "colorConverter": {
+    "title": "Color Converter",
+    "description": "Convert colors between HEX, RGB, and HSL formats with a live preview swatch.",
+    "shortDescription": "Convert HEX, RGB, and HSL colors",
+    "sourceTitle": "Input Format",
+    "sourceHex": "HEX",
+    "sourceRgb": "RGB",
+    "sourceHsl": "HSL",
+    "valuesTitle": "Color Values",
+    "hexDescription": "Enter a HEX color such as #0082C9 or 0082C9.",
+    "previewTitle": "Live Preview",
+    "resultTitle": "Converted Color",
+    "toolInfo": {
+      "title": "What is a Color Converter?",
+      "description": "This tool converts color values between HEX, RGB, and HSL representations. Enter a color in any supported format and instantly see the equivalents plus a live preview swatch."
+    }
+  },
+  "contrastChecker": {
+    "title": "Contrast Checker",
+    "description": "Check the WCAG contrast ratio between two colors and see AA/AAA pass or fail results.",
+    "shortDescription": "Check WCAG color contrast ratios",
+    "colorsTitle": "Colors",
+    "foregroundDescription": "Pick the foreground (text) color.",
+    "backgroundDescription": "Pick the background color.",
+    "foregroundHex": "Foreground HEX",
+    "backgroundHex": "Background HEX",
+    "previewTitle": "Preview",
+    "sampleLarge": "Large text sample",
+    "sampleNormal": "Normal body text sample for readability checking.",
+    "resultTitle": "WCAG Results",
+    "toolInfo": {
+      "title": "What is a Contrast Checker?",
+      "description": "This tool calculates the contrast ratio between two colors using the WCAG relative luminance formula. It reports whether the pair meets AA and AAA requirements for normal and large text."
+    }
+  },
   "generate": {
     "arithmeticSequenceOption": "Arithmetic sequence option",
     "description": "Generate a sequence of numbers with customizable parameters.",
@@ -42,6 +91,17 @@
     "toolInfo": {
       "description": "This tool allows you to generate a sequence of numbers with customizable parameters. You can specify the starting value, step size, and number of elements.",
       "title": "Generate numbers"
+    }
+  },
+  "httpStatusCodes": {
+    "title": "HTTP Status Codes",
+    "description": "Searchable reference of common HTTP status codes with short descriptions.",
+    "shortDescription": "Look up HTTP status codes",
+    "inputTitle": "Filter by code or text",
+    "resultTitle": "Matching Status Codes",
+    "toolInfo": {
+      "title": "What are HTTP Status Codes?",
+      "description": "HTTP status codes are three-digit responses returned by servers. This reference lists common codes so you can quickly find meanings for successes, redirects, client errors, and server errors."
     }
   },
   "ohmsLaw": {
@@ -194,6 +254,28 @@
     "toolInfo": {
       "description": "This is an online browser-based utility for calculating the sum of a bunch of numbers. You can enter the numbers separated by a comma, space, or any other character, including the line break. You can also simply paste a fragment of textual data that contains numerical values that you want to sum up and the utility will extract them and find their sum.",
       "title": "What Is a Number Sum Calculator?"
+    }
+  },
+  "unitConverter": {
+    "title": "Unit Converter",
+    "description": "Convert values between common length, weight, temperature, and volume units.",
+    "shortDescription": "Convert length, weight, temperature, and volume",
+    "optionsTitle": "Conversion Options",
+    "categoryDescription": "Choose the measurement category.",
+    "fromUnit": "Convert from this unit",
+    "toUnit": "Convert to this unit",
+    "precision": "Number of decimal places in the result",
+    "inputTitle": "Input Values",
+    "resultTitle": "Converted Values",
+    "categories": {
+      "length": "Length",
+      "weight": "Weight",
+      "temperature": "Temperature",
+      "volume": "Volume"
+    },
+    "toolInfo": {
+      "title": "What is a Unit Converter?",
+      "description": "Convert numeric values between units in length, weight, temperature, and volume categories. Enter one value per line for batch conversion."
     }
   },
   "voltageDropInWire": {
