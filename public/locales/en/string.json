@@ -13,6 +13,29 @@
       "title": "What is Base64?"
     }
   },
+  "caseConverter": {
+    "title": "Case Converter",
+    "description": "Convert text between lowercase, UPPERCASE, Title Case, camelCase, PascalCase, snake_case, kebab-case, and CONSTANT_CASE.",
+    "shortDescription": "Convert text between common case styles",
+    "longDescription": "Convert text between lowercase, UPPERCASE, Title Case, camelCase, PascalCase, snake_case, kebab-case, and CONSTANT_CASE. All processing happens locally — nothing is uploaded.",
+    "toolInfo": {
+      "title": "About this tool"
+    },
+    "cases": {
+      "lowercase": "lowercase",
+      "uppercase": "UPPERCASE",
+      "title": "Title Case",
+      "camel": "camelCase",
+      "pascal": "PascalCase",
+      "snake": "snake_case",
+      "kebab": "kebab-case",
+      "constant": "CONSTANT_CASE"
+    },
+    "optionsTitle": "Options",
+    "targetCaseDescription": "Target case style",
+    "inputTitle": "Input",
+    "resultTitle": "Result"
+  },
   "censor": {
     "description": "utility for censoring words in text. Load your text in the input form on the left, specify all the bad words in the options, and you'll instantly get censored text in the output area.\", longDescription: 'With this online tool, you can censor certain words in any text. You can specify a list of unwanted words (such as swear words or secret words) and the program will replace them with alternative words and create a safe-to-read text. The words can be specified in a multi-line text field in the options by entering one word per line.', keywords: ['text', 'censor', 'words', 'characters'], component: lazy(() => import('./index')), i18n: { name: 'string:censor.title', description: 'string:censor.description",
     "shortDescription": "Quickly mask bad words or replace them with alternative words.",
@@ -23,10 +46,35 @@
     "shortDescription": "Create text that reads the same forward and backward",
     "title": "Create palindrome"
   },
+  "emailExtractor": {
+    "description": "Extract all email addresses from any text. Simply paste your text and instantly get a clean list of the email addresses found.",
+    "shortDescription": "Extract email addresses from text",
+    "title": "Email Extractor",
+    "options": {
+      "title": "Extraction options",
+      "uniqueTitle": "Remove duplicates",
+      "uniqueDesc": "Keep only unique email addresses in the results"
+    }
+  },
   "extractSubstring": {
     "description": "World's simplest browser-based utility for extracting substrings from text. Input your text and specify start and end positions to extract the desired portion. Perfect for data processing, text analysis, or extracting specific content from larger text blocks.",
     "shortDescription": "Extract a portion of text between specified positions",
     "title": "Extract substring"
+  },
+  "hashGenerator": {
+    "title": "Hash Generator",
+    "description": "Compute cryptographic hashes of any text entirely in your browser using Web Crypto and a local MD5 implementation.",
+    "shortDescription": "Hash text with SHA-256, SHA-512, SHA-1, or MD5",
+    "longDescription": "Compute cryptographic hashes of any text entirely in your browser using Web Crypto and a local MD5 implementation. All processing happens locally — nothing is uploaded.",
+    "toolInfo": {
+      "title": "About this tool"
+    },
+    "optionsTitle": "Options",
+    "algorithmDescription": "Hash algorithm",
+    "uppercase": "Uppercase hex output",
+    "uppercaseDescription": "Emit the digest using uppercase hexadecimal characters",
+    "inputTitle": "Input",
+    "resultTitle": "Result"
   },
   "hiddenCharacterDetector": {
     "analysisOptions": "Analysis Options",
@@ -72,6 +120,50 @@
       "title": "What Is a Text Joiner?"
     }
   },
+  "jwtDecoder": {
+    "title": "JWT Decoder",
+    "description": "Decode JSON Web Tokens to inspect header and payload claims without sending data anywhere. Signature verification is not performed.",
+    "shortDescription": "Decode JWT header and payload locally",
+    "longDescription": "Decode JSON Web Tokens to inspect header and payload claims without sending data anywhere. Signature verification is not performed. All processing happens locally — nothing is uploaded.",
+    "toolInfo": {
+      "title": "About this tool"
+    },
+    "optionsTitle": "Options",
+    "prettyPrint": "Pretty-print JSON",
+    "prettyPrintDescription": "Format header and payload with indentation",
+    "inputTitle": "Input",
+    "resultTitle": "Result"
+  },
+  "loremIpsum": {
+    "title": "Lorem Ipsum Generator",
+    "description": "Generate classic lorem ipsum placeholder text as words, sentences, or paragraphs for mockups and drafts.",
+    "shortDescription": "Generate placeholder lorem ipsum text",
+    "longDescription": "Generate classic lorem ipsum placeholder text as words, sentences, or paragraphs for mockups and drafts. All processing happens locally — nothing is uploaded.",
+    "toolInfo": {
+      "title": "About this tool"
+    },
+    "types": {
+      "paragraphs": "Paragraphs",
+      "sentences": "Sentences",
+      "words": "Words"
+    },
+    "optionsTitle": "Options",
+    "typeDescription": "Generate words, sentences, or paragraphs",
+    "countDescription": "Number of items to generate (1–100)",
+    "resultTitle": "Result"
+  },
+  "markdownPreview": {
+    "title": "Markdown Preview",
+    "description": "Render Markdown to a sanitized HTML preview locally in your browser.",
+    "shortDescription": "Preview Markdown as HTML",
+    "longDescription": "Write or paste Markdown and instantly preview the rendered HTML. Output is sanitized with DOMPurify to reduce XSS risk from untrusted content.",
+    "inputTitle": "Markdown Input",
+    "resultTitle": "Preview",
+    "emptyPreview": "Rendered preview will appear here.",
+    "toolInfo": {
+      "title": "What is {{title}}?"
+    }
+  },
   "palindrome": {
     "description": "World's simplest browser-based utility for checking if text is a palindrome. Instantly verify if your text reads the same forward and backward. Perfect for word puzzles, linguistic analysis, or validating symmetrical text patterns. Supports various delimiters and multi-word palindrome detection.",
     "shortDescription": "Check if text reads the same forward and backward",
@@ -95,6 +187,17 @@
       "title": "About Password Generator"
     }
   },
+  "passwordStrength": {
+    "title": "Password Strength",
+    "description": "Estimate password strength from length, character variety, and common patterns. Suggestions stay on your device.",
+    "shortDescription": "Analyze password strength in your browser",
+    "longDescription": "Estimate password strength from length, character variety, and common patterns. Suggestions stay on your device. All processing happens locally — nothing is uploaded.",
+    "toolInfo": {
+      "title": "About this tool"
+    },
+    "inputTitle": "Input",
+    "resultTitle": "Result"
+  },
   "quote": {
     "allowDoubleQuotation": "Allow double quotation",
     "description": "Add quotes around text with customizable options.",
@@ -116,6 +219,30 @@
     "description": "World's simplest browser-based utility for randomizing text case. Input your text and instantly transform it with random upper and lower case letters. Perfect for creating unique text effects, testing case sensitivity, or generating varied text patterns.",
     "shortDescription": "Randomize the case of letters in text",
     "title": "Randomize case"
+  },
+  "regexTester": {
+    "title": "Regex Tester",
+    "description": "Experiment with regular expressions against sample input. View matches and optional replacements instantly on-device.",
+    "shortDescription": "Test regular expressions against sample text",
+    "longDescription": "Experiment with regular expressions against sample input. View matches and optional replacements instantly on-device. All processing happens locally — nothing is uploaded.",
+    "toolInfo": {
+      "title": "About this tool"
+    },
+    "optionsTitle": "Options",
+    "patternDescription": "Regular expression pattern",
+    "patternPlaceholder": "e.g. \\w+",
+    "flagG": "Global (g)",
+    "flagGDescription": "Find all matches rather than stopping after the first",
+    "flagI": "Ignore case (i)",
+    "flagIDescription": "Case-insensitive matching",
+    "flagM": "Multiline (m)",
+    "flagMDescription": "^ and $ match line boundaries",
+    "showReplacement": "Show replacement",
+    "showReplacementDescription": "Also display the string after replace()",
+    "replacementDescription": "Replacement string (supports $1, $&, etc.)",
+    "replacementPlaceholder": "e.g. [$&]",
+    "inputTitle": "Input",
+    "resultTitle": "Result"
   },
   "removeDuplicateLines": {
     "description": "Load your text in the input form on the left and you'll instantly get text with no duplicate lines in the output area. Powerful, free, and fast. Load text lines – get unique text lines",
@@ -212,6 +339,23 @@
     "symbolTitle": "Use a Symbol for Splitting",
     "title": "Split"
   },
+  "sqlFormatter": {
+    "title": "SQL Formatter",
+    "description": "Beautify SQL queries with dialect-aware formatting. Runs entirely in your browser.",
+    "shortDescription": "Format and beautify SQL",
+    "longDescription": "Paste a SQL statement and get clean indentation with keyword casing. Choose dialects such as MySQL, PostgreSQL, SQLite, and more.",
+    "inputTitle": "Input SQL",
+    "resultTitle": "Formatted SQL",
+    "optionsTitle": "Formatting Options",
+    "languageDescription": "SQL dialect used for parsing and formatting",
+    "tabWidthDescription": "Spaces per indentation level when not using tabs",
+    "useTabsTitle": "Use tabs",
+    "useTabsDescription": "Indent with tab characters instead of spaces",
+    "keywordCaseDescription": "How SQL keywords should be cased in the output",
+    "toolInfo": {
+      "title": "What is {{title}}?"
+    }
+  },
   "statistic": {
     "characterFrequencyAnalysis": "Character Frequency Analysis",
     "characterFrequencyAnalysisDescription": "Count how often each character appears in the text",
@@ -234,6 +378,20 @@
     "wordDelimitersPlaceholder": "eg. \\s.,;:!?\"«»()…",
     "wordFrequencyAnalysis": "Word Frequency Analysis",
     "wordFrequencyAnalysisDescription": "Count how often each word appears in the text"
+  },
+  "textCompare": {
+    "title": "Compare Texts",
+    "description": "Analyze two text blocks to highlight differences, including additions, deletions, and changes.",
+    "shortDescription": "Compare two texts and spot differences instantly",
+    "longDescription": "This tool helps you quickly identify differences between two versions of a text. It highlights inserted, removed, and modified content, making it ideal for reviewing edits, tracking changes, or comparing documents. You can choose the level of precision to detect differences at the word or character level depending on your needs.",
+    "inputTitle": "Input Text",
+    "resultTitle": "Highlighted differences",
+    "options": {
+      "title": "Comparison Settings",
+      "wordLevel": "Word level",
+      "charLevel": "Character level",
+      "levelDesc": "Choose how detailed the comparison should be. Word level highlights changes by words, while character level detects more granular differences."
+    }
   },
   "textReplacer": {
     "description": "Replace text patterns with new content.",
@@ -263,6 +421,22 @@
     "shortDescription": "Quickly encode text to morse",
     "shortSignal": "Short Signal",
     "title": "String To morse"
+  },
+  "totpGenerator": {
+    "title": "TOTP Generator",
+    "description": "Generate time-based one-time passwords (TOTP) from a base32 secret using HMAC-SHA1 in the browser (RFC 6238).",
+    "shortDescription": "Generate TOTP codes from a base32 secret",
+    "longDescription": "Generate time-based one-time passwords (TOTP) from a base32 secret using HMAC-SHA1 in the browser (RFC 6238). All processing happens locally — nothing is uploaded.",
+    "toolInfo": {
+      "title": "About this tool"
+    },
+    "optionsTitle": "Options",
+    "digits6": "Digits6",
+    "digits8": "Digits8",
+    "digitsDescription": "Number of OTP digits",
+    "periodDescription": "Time step in seconds",
+    "inputTitle": "Input",
+    "resultTitle": "Result"
   },
   "truncate": {
     "addTruncationIndicator": "Add Truncation Indicator",
@@ -312,6 +486,16 @@
     "shortDescription": "Convert text to uppercase",
     "title": "Convert to Uppercase"
   },
+  "urlDecode": {
+    "inputTitle": "Input String(URL-escaped)",
+    "resultTitle": "Output string",
+    "toolInfo": {
+      "description": "Load your string and it will automatically get URL-unescaped.",
+      "longDescription": "This tool URL-decodes a previously URL-encoded string. URL-decoding is the inverse operation of URL-encoding. All percent-encoded characters get decoded to characters that you can understand. Some of the most well known percent-encoded values are %20 for a space, %3a for a colon, %2f for a slash, and %3f for a question mark. The two digits following the percent sign are character's char code values in hex.",
+      "shortDescription": "Quickly URL-unescape a string.",
+      "title": "String URL decoder"
+    }
+  },
   "urlEditor": {
     "addParameter": "Add Parameter",
     "credentialsNotSupported": "URLs with username or password are not supported.",
@@ -342,16 +526,6 @@
     "urlDetails": "URL Details",
     "value": "Value"
   },
-  "urlDecode": {
-    "inputTitle": "Input String(URL-escaped)",
-    "resultTitle": "Output string",
-    "toolInfo": {
-      "description": "Load your string and it will automatically get URL-unescaped.",
-      "longDescription": "This tool URL-decodes a previously URL-encoded string. URL-decoding is the inverse operation of URL-encoding. All percent-encoded characters get decoded to characters that you can understand. Some of the most well known percent-encoded values are %20 for a space, %3a for a colon, %2f for a slash, and %3f for a question mark. The two digits following the percent sign are character's char code values in hex.",
-      "shortDescription": "Quickly URL-unescape a string.",
-      "title": "String URL decoder"
-    }
-  },
   "urlEncode": {
     "encodingOption": {
       "nonSpecialCharDescription": "If selected, then all characters in the input string will be converted to URL-encoding (not just special).",
@@ -367,57 +541,18 @@
       "title": "String URL encoder"
     }
   },
-  "emailExtractor": {
-    "description": "Extract all email addresses from any text. Simply paste your text and instantly get a clean list of the email addresses found.",
-    "shortDescription": "Extract email addresses from text",
-    "title": "Email Extractor",
-    "options": {
-      "title": "Extraction options",
-      "uniqueTitle": "Remove duplicates",
-      "uniqueDesc": "Keep only unique email addresses in the results"
-    }
-  },
-  "textCompare": {
-    "title": "Compare Texts",
-    "description": "Analyze two text blocks to highlight differences, including additions, deletions, and changes.",
-    "shortDescription": "Compare two texts and spot differences instantly",
-    "longDescription": "This tool helps you quickly identify differences between two versions of a text. It highlights inserted, removed, and modified content, making it ideal for reviewing edits, tracking changes, or comparing documents. You can choose the level of precision to detect differences at the word or character level depending on your needs.",
-    "inputTitle": "Input Text",
-    "resultTitle": "Highlighted differences",
-    "options": {
-      "title": "Comparison Settings",
-      "wordLevel": "Word level",
-      "charLevel": "Character level",
-      "levelDesc": "Choose how detailed the comparison should be. Word level highlights changes by words, while character level detects more granular differences."
-    }
-  },
-  "sqlFormatter": {
-    "title": "SQL Formatter",
-    "description": "Beautify SQL queries with dialect-aware formatting. Runs entirely in your browser.",
-    "shortDescription": "Format and beautify SQL",
-    "longDescription": "Paste a SQL statement and get clean indentation with keyword casing. Choose dialects such as MySQL, PostgreSQL, SQLite, and more.",
-    "inputTitle": "Input SQL",
-    "resultTitle": "Formatted SQL",
-    "optionsTitle": "Formatting Options",
-    "languageDescription": "SQL dialect used for parsing and formatting",
-    "tabWidthDescription": "Spaces per indentation level when not using tabs",
-    "useTabsTitle": "Use tabs",
-    "useTabsDescription": "Indent with tab characters instead of spaces",
-    "keywordCaseDescription": "How SQL keywords should be cased in the output",
+  "uuidGenerator": {
+    "title": "UUID Generator",
+    "description": "Generate UUID v4 identifiers in your browser. Optionally include NanoID-style random IDs alongside each UUID.",
+    "shortDescription": "Generate UUID v4 and optional NanoIDs",
+    "longDescription": "Generate UUID v4 identifiers in your browser. Optionally include NanoID-style random IDs alongside each UUID. All processing happens locally — nothing is uploaded.",
     "toolInfo": {
-      "title": "What is {{title}}?"
-    }
-  },
-  "markdownPreview": {
-    "title": "Markdown Preview",
-    "description": "Render Markdown to a sanitized HTML preview locally in your browser.",
-    "shortDescription": "Preview Markdown as HTML",
-    "longDescription": "Write or paste Markdown and instantly preview the rendered HTML. Output is sanitized with DOMPurify to reduce XSS risk from untrusted content.",
-    "inputTitle": "Markdown Input",
-    "resultTitle": "Preview",
-    "emptyPreview": "Rendered preview will appear here.",
-    "toolInfo": {
-      "title": "What is {{title}}?"
-    }
+      "title": "About this tool"
+    },
+    "optionsTitle": "Options",
+    "countDescription": "Number of items to generate (1–100)",
+    "includeNanoId": "Also generate NanoID",
+    "includeNanoIdDescription": "Append a NanoID-style random ID after each UUID",
+    "resultTitle": "Result"
   }
 }

@@ -28,6 +28,14 @@ import { tool as stringUnicode } from './unicode/meta';
 import { tool as stringEmailExtractor } from './email-extractor/meta';
 import { tool as stringSqlFormatter } from './sql-formatter/meta';
 import { tool as stringMarkdownPreview } from './markdown-preview/meta';
+import { tool as stringUuidGenerator } from './uuid-generator/meta';
+import { tool as stringHashGenerator } from './hash-generator/meta';
+import { tool as stringJwtDecoder } from './jwt-decoder/meta';
+import { tool as stringRegexTester } from './regex-tester/meta';
+import { tool as stringCaseConverter } from './case-converter/meta';
+import { tool as stringPasswordStrength } from './password-strength/meta';
+import { tool as stringTotpGenerator } from './totp-generator/meta';
+import { tool as stringLoremIpsum } from './lorem-ipsum/meta';
 
 export const stringTools = [
   stringSplit,
@@ -59,5 +67,13 @@ export const stringTools = [
   stringCompare,
   stringSlugGenerator,
   stringSqlFormatter,
-  stringMarkdownPreview
+  stringMarkdownPreview,
+  stringUuidGenerator,
+  stringHashGenerator,
+  stringJwtDecoder,
+  stringRegexTester,
+  stringCaseConverter,
+  stringPasswordStrength,
+  stringTotpGenerator,
+  stringLoremIpsum
 ];
