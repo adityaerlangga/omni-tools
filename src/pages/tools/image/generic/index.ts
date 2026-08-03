@@ -10,6 +10,12 @@ import { tool as imageToText } from './image-to-text/meta';
 import { tool as qrCodeGenerator } from './qr-code/meta';
 import { tool as rotateImage } from './rotate/meta';
 import { tool as imageEditor } from './editor/meta';
+import { tool as imageToBase64 } from './image-to-base64/meta';
+import { tool as base64ToImage } from './base64-to-image/meta';
+import { tool as exifViewer } from './exif-viewer/meta';
+import { tool as removeExif } from './remove-exif/meta';
+import { tool as qrDecoder } from './qr-decoder/meta';
+import { tool as heicToJpg } from './heic-to-jpg/meta';
 
 export const imageGenericTools = [
   imageEditor,
@@ -21,7 +27,13 @@ export const imageGenericTools = [
   changeColors,
   createTransparent,
   imageToText,
+  imageToBase64,
+  base64ToImage,
+  exifViewer,
+  removeExif,
   qrCodeGenerator,
+  qrDecoder,
+  heicToJpg,
   rotateImage,
   splitImage
 ];
