@@ -1,4 +1,12 @@
 {
+  "base64ToImage": {
+    "description": "Paste a Base64 string or data URL and convert it into a downloadable image preview. Processing stays entirely in your browser.",
+    "error": "Could not decode the Base64 input. Check that it is a valid image data URL or Base64 string.",
+    "inputTitle": "Base64 or data URL",
+    "resultTitle": "Decoded image",
+    "shortDescription": "Convert Base64 / data URLs into images.",
+    "title": "Base64 to Image"
+  },
   "changeColors": {
     "description": "Change specific colors in an image by selecting a source color and replacing it with a new one.",
     "shortDescription": "Quickly swap colors in a image",
@@ -67,6 +75,39 @@
     "shortDescription": "Edit images with advanced tools and features",
     "title": "Image Editor"
   },
+  "exifViewer": {
+    "description": "Inspect EXIF and other image metadata locally in your browser. Upload a photo to view camera, exposure, and optional GPS details as key/value text.",
+    "error": "Failed to read image metadata. Please try a different file.",
+    "includeGps": "Include GPS coordinates",
+    "includeGpsDescription": "Show latitude/longitude and related GPS tags when available.",
+    "inputTitle": "Input image",
+    "optionsTitle": "Metadata options",
+    "resultTitle": "EXIF / metadata",
+    "shortDescription": "View EXIF metadata from images.",
+    "title": "EXIF Viewer"
+  },
+  "heicToJpg": {
+    "description": "Convert Apple HEIC/HEIF photos to JPEG entirely in your browser. No uploads — pick a HEIC file and download a JPG.",
+    "error": "Failed to convert HEIC/HEIF. Make sure the file is a valid HEIC image.",
+    "inputTitle": "HEIC / HEIF image",
+    "loadingText": "Converting HEIC…",
+    "optionsTitle": "Conversion options",
+    "qualityDescription": "JPEG quality (10–100). Higher values keep more detail and produce larger files.",
+    "resultTitle": "Converted JPEG",
+    "shortDescription": "Convert HEIC/HEIF images to JPEG.",
+    "title": "HEIC to JPG"
+  },
+  "imageToBase64": {
+    "description": "Convert an image to a Base64 string or data URL in your browser. Useful for embedding images in HTML, CSS, or JSON without uploading files.",
+    "error": "Failed to convert the image to Base64. Please try again.",
+    "includeDataUrlPrefix": "Include data URL prefix",
+    "includeDataUrlPrefixDescription": "When enabled, output looks like data:image/png;base64,.... When disabled, only the raw Base64 payload is returned.",
+    "inputTitle": "Input image",
+    "optionsTitle": "Output options",
+    "resultTitle": "Base64 output",
+    "shortDescription": "Encode images as Base64 / data URLs.",
+    "title": "Image to Base64"
+  },
   "imageToText": {
     "description": "Extract text from images (JPG, PNG) using optical character recognition (OCR).",
     "shortDescription": "Extract text from images using OCR.",
@@ -98,10 +139,31 @@
     "shortDescription": "Create customized QR codes for various data formats.",
     "title": "QR Code Generator"
   },
+  "qrDecoder": {
+    "description": "Decode QR codes from images entirely in your browser. Upload a screenshot or photo containing a QR code to read its contents.",
+    "error": "Failed to decode the image. Please try a clearer QR code photo.",
+    "inputTitle": "Image with QR code",
+    "notFound": "No QR code found in this image.",
+    "resultTitle": "Decoded text",
+    "shortDescription": "Read QR codes from images.",
+    "title": "QR Code Decoder"
+  },
   "removeBackground": {
     "description": "Remove the background from an image to isolate the main subject with transparency.",
     "shortDescription": "Automatically remove backgrounds from images",
     "title": "Remove Background from Image"
+  },
+  "removeExif": {
+    "description": "Strip EXIF and other metadata from an image by re-encoding it through the canvas API. Download a clean JPEG or PNG without camera or GPS data.",
+    "error": "Failed to remove metadata. Please try a different image.",
+    "inputTitle": "Input image",
+    "jpegQualityDescription": "JPEG quality (10–100) when exporting as JPEG.",
+    "loadingText": "Removing metadata…",
+    "optionsTitle": "Output options",
+    "outputFormatDescription": "Choose the output format. Re-encoding removes EXIF and similar metadata.",
+    "resultTitle": "Clean image",
+    "shortDescription": "Strip EXIF metadata from images.",
+    "title": "Remove EXIF Metadata"
   },
   "resize": {
     "description": "Resize images using pixel dimensions or percentage scaling. Maintain aspect ratio and set width or height with automatic adjustment. Download results individually or as a ZIP archive.",

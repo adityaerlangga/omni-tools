@@ -120,5 +120,62 @@
       "keyDescription": "Select the key to sort by",
       "orderDescription": "Choose the sort order"
     }
+  },
+  "yamlToJson": {
+    "title": "YAML to JSON",
+    "description": "Convert YAML documents into pretty-printed JSON entirely in your browser.",
+    "shortDescription": "Convert YAML to JSON",
+    "longDescription": "Paste YAML and instantly get valid, indented JSON. Parsing and formatting run locally with js-yaml—nothing is uploaded.",
+    "inputTitle": "Input YAML",
+    "resultTitle": "JSON Output",
+    "indentation": "Indentation",
+    "useSpaces": "Use Spaces",
+    "useSpacesDescription": "Indent JSON output with spaces",
+    "useTabs": "Use Tabs",
+    "useTabsDescription": "Indent JSON output with tabs.",
+    "toolInfo": {
+      "title": "What is {{title}}?"
+    }
+  },
+  "jsonToYaml": {
+    "title": "JSON to YAML",
+    "description": "Convert JSON data into readable YAML. Useful for configs, Kubernetes manifests, and human-friendly data files.",
+    "shortDescription": "Convert JSON to YAML",
+    "longDescription": "Transform JSON objects and arrays into YAML using js-yaml in the browser. Choose indentation depth for cleaner diffs and readable configs.",
+    "inputTitle": "Input JSON",
+    "resultTitle": "YAML Output",
+    "optionsTitle": "Output Options",
+    "indentDescription": "Number of spaces used for YAML indentation",
+    "toolInfo": {
+      "title": "What is {{title}}?"
+    }
+  },
+  "yamlFormatter": {
+    "title": "YAML Formatter",
+    "description": "Beautify and validate YAML. Fix messy indentation and normalize structure locally.",
+    "shortDescription": "Format and validate YAML",
+    "longDescription": "This tool parses YAML, reports syntax errors, and dumps a clean, indented document. Optionally sort keys for consistent output.",
+    "inputTitle": "Input YAML",
+    "resultTitle": "Formatted YAML",
+    "optionsTitle": "Formatting Options",
+    "indentDescription": "Number of spaces used for indentation",
+    "sortKeysTitle": "Sort keys",
+    "sortKeysDescription": "Alphabetically sort mapping keys in the output",
+    "toolInfo": {
+      "title": "What is {{title}}?"
+    }
+  },
+  "fakeJson": {
+    "title": "Fake JSON Generator",
+    "description": "Generate sample JSON objects with names, emails, IDs, and nested fields for mocking APIs and UI prototypes.",
+    "shortDescription": "Generate sample JSON data",
+    "longDescription": "Create deterministic fake JSON records in your browser. Set how many objects to generate and optionally provide a seed for reproducible output.",
+    "resultTitle": "Generated JSON",
+    "optionsTitle": "Generator Options",
+    "countDescription": "Number of objects to generate (1–100)",
+    "seedDescription": "Optional seed for reproducible results (leave blank for random)",
+    "toolInfo": {
+      "title": "What is {{title}}?"
+    }
   }
 }

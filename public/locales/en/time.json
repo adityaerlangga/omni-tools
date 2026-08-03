@@ -12,6 +12,19 @@
       "title": "What is a Leap Year?"
     }
   },
+  "convertDateToUnix": {
+    "description": "Convert a human-readable date to a Unix Timestamp.",
+    "outputOptions": "Output Options",
+    "shortDescription": "Convert date to Unix timestamp.",
+    "title": "Convert Date to Unix",
+    "toolInfo": {
+      "description": "This tool converts a human-readable date format (e.g., YYYY-MM-DD HH:MM:SS) into a Unix Timestamp. The user can choose to specify a given UTC offset (e.g., YYYY-MM-DD HH:MM:SS +XX:XX) or use the local timezone. If the user doesn't provide either an offset or choose to use the local timezone, the result is given with an offset of +00:00. ",
+      "title": "Convert Date to Unix"
+    },
+    "useLocalTime": "Use Local Time",
+    "useLocalTimeDescription": "The input time and date is processed as your browser's time zone. Additional specifications will be ignored.",
+    "options": "Options"
+  },
   "convertDaysToHours": {
     "addHoursName": "Add Hours Name",
     "addHoursNameDescription": "Append the string hours to output values",
@@ -88,42 +101,6 @@
     "shortDescription": "Parse and explain cron expressions in plain English",
     "longDescription": "Crontab Guru is a cron expression parser and validator that translates complex cron syntax into plain, human-readable descriptions. Whether you're scheduling automated backups, system maintenance tasks, or CI/CD pipelines, this tool helps you understand exactly when your jobs will run. Supports standard 5-field cron expressions, validates syntax in real time, and processes multiple expressions at once — one per line. Available in English, French, Spanish, German, Japanese, Chinese, Portuguese, Dutch, and Russian."
   },
-  "timeBetweenDates": {
-    "description": "Calculate the time difference between two dates. Get the exact duration in days, hours, minutes, and seconds.",
-    "endDate": "End Date",
-    "endDateTime": "End Date & Time",
-    "endTime": "End Time",
-    "endTimezone": "End Timezone",
-    "shortDescription": "Calculate time between two dates",
-    "startDate": "Start Date",
-    "startDateTime": "Start Date & Time",
-    "startTime": "Start Time",
-    "startTimezone": "Start Timezone",
-    "title": "Time Between Dates",
-    "toolInfo": {
-      "description": "Calculate the exact time difference between two dates and times, with support for different timezones. This tool provides a detailed breakdown of the time difference in various units (years, months, days, hours, minutes, and seconds).",
-      "title": "Time Between Dates Calculator"
-    }
-  },
-  "truncateClockTime": {
-    "description": "Truncate clock time to remove seconds or minutes. Round time to the nearest hour, minute, or custom interval.",
-    "printDroppedComponents": "Print Dropped Components",
-    "shortDescription": "Truncate clock time to specified precision",
-    "timePadding": "Time Padding",
-    "title": "Truncate Clock Time",
-    "toolInfo": {
-      "title": "What is a {{title}}?"
-    },
-    "truncateMinutesAndSeconds": "Truncate Minutes and Seconds",
-    "truncateMinutesAndSecondsDescription": "Drop both – the minutes and seconds components from each clock time.",
-    "truncateOnlySeconds": "Truncate Only Seconds",
-    "truncateOnlySecondsDescription": "Drop the seconds component from each clock time.",
-    "truncationSide": "Truncation Side",
-    "useZeroPadding": "Use Zero Padding",
-    "zeroPaddingDescription": "Make all time components always be two digits wide.",
-    "zeroPrintDescription": "Display the dropped parts as zero values \"00\".",
-    "zeroPrintTruncatedParts": "Zero-print Truncated Parts"
-  },
   "discordTimestamp": {
     "name": "Discord Timestamp Generator",
     "description": "Convert dates and times into Discord's special timestamp format that automatically adapts to each user's local timezone and language",
@@ -151,17 +128,54 @@
       "description": "Discord timestamps are a special syntax that displays dates and times dynamically. Instead of showing a fixed time, they automatically convert to each viewer's local timezone and language — so everyone sees the correct time for their location. Simply enter one datetime per line, choose a format, and paste the results directly into Discord. The tool processes each line independently — blank lines are preserved in the output, invalid lines are flagged with ❌, and valid datetimes are converted instantly. Enable UTC mode to ensure consistent results regardless of your local timezone."
     }
   },
-  "convertDateToUnix": {
-    "description": "Convert a human-readable date to a Unix Timestamp.",
-    "outputOptions": "Output Options",
-    "shortDescription": "Convert date to Unix timestamp.",
-    "title": "Convert Date to Unix",
+  "timeBetweenDates": {
+    "description": "Calculate the time difference between two dates. Get the exact duration in days, hours, minutes, and seconds.",
+    "endDate": "End Date",
+    "endDateTime": "End Date & Time",
+    "endTime": "End Time",
+    "endTimezone": "End Timezone",
+    "shortDescription": "Calculate time between two dates",
+    "startDate": "Start Date",
+    "startDateTime": "Start Date & Time",
+    "startTime": "Start Time",
+    "startTimezone": "Start Timezone",
+    "title": "Time Between Dates",
     "toolInfo": {
-      "description": "This tool converts a human-readable date format (e.g., YYYY-MM-DD HH:MM:SS) into a Unix Timestamp. The user can choose to specify a given UTC offset (e.g., YYYY-MM-DD HH:MM:SS +XX:XX) or use the local timezone. If the user doesn't provide either an offset or choose to use the local timezone, the result is given with an offset of +00:00. ",
-      "title": "Convert Date to Unix"
+      "description": "Calculate the exact time difference between two dates and times, with support for different timezones. This tool provides a detailed breakdown of the time difference in various units (years, months, days, hours, minutes, and seconds).",
+      "title": "Time Between Dates Calculator"
+    }
+  },
+  "timezoneConverter": {
+    "title": "Timezone Converter",
+    "description": "Convert a date and time from one timezone to another using common IANA timezone identifiers.",
+    "shortDescription": "Convert datetimes between timezones",
+    "optionsTitle": "Conversion Options",
+    "dateTimeDescription": "Enter the date and time to convert (YYYY-MM-DD HH:mm:ss).",
+    "fromTimezone": "Source timezone",
+    "toTimezone": "Target timezone",
+    "resultTitle": "Converted Date & Time",
+    "toolInfo": {
+      "title": "What is a Timezone Converter?",
+      "description": "This tool converts a datetime from one IANA timezone to another entirely in your browser. Choose a source timezone, a target timezone, and enter a datetime to see the equivalent local time elsewhere in the world."
+    }
+  },
+  "truncateClockTime": {
+    "description": "Truncate clock time to remove seconds or minutes. Round time to the nearest hour, minute, or custom interval.",
+    "printDroppedComponents": "Print Dropped Components",
+    "shortDescription": "Truncate clock time to specified precision",
+    "timePadding": "Time Padding",
+    "title": "Truncate Clock Time",
+    "toolInfo": {
+      "title": "What is a {{title}}?"
     },
-    "useLocalTime": "Use Local Time",
-    "useLocalTimeDescription": "The input time and date is processed as your browser's time zone. Additional specifications will be ignored.",
-    "options": "Options"
+    "truncateMinutesAndSeconds": "Truncate Minutes and Seconds",
+    "truncateMinutesAndSecondsDescription": "Drop both – the minutes and seconds components from each clock time.",
+    "truncateOnlySeconds": "Truncate Only Seconds",
+    "truncateOnlySecondsDescription": "Drop the seconds component from each clock time.",
+    "truncationSide": "Truncation Side",
+    "useZeroPadding": "Use Zero Padding",
+    "zeroPaddingDescription": "Make all time components always be two digits wide.",
+    "zeroPrintDescription": "Display the dropped parts as zero values \"00\".",
+    "zeroPrintTruncatedParts": "Zero-print Truncated Parts"
   }
 }

@@ -36,5 +36,43 @@
     "resultTitle": "WEBP Images",
     "shortDescription": "Convert Images to WebP Format with quality control.",
     "title": "Convert Images to WebP"
+  },
+  "zipCreate": {
+    "title": "Create ZIP Archive",
+    "description": "Select multiple files and create a downloadable ZIP archive entirely in your browser.",
+    "shortDescription": "Create a ZIP from multiple files",
+    "inputTitle": "Files to Zip",
+    "emptySelection": "No files selected yet.",
+    "addFiles": "Add files",
+    "clear": "Clear",
+    "remove": "Remove",
+    "optionsTitle": "Archive Options",
+    "zipNameDescription": "Name of the generated ZIP file.",
+    "resultTitle": "ZIP Archive",
+    "toolInfo": {
+      "title": "What is Create ZIP Archive?",
+      "description": "This tool packs selected files into a ZIP archive using JSZip in your browser. Nothing is uploaded to a server — the ZIP is generated locally and available for download."
+    }
+  },
+  "zipExtract": {
+    "title": "Extract ZIP Archive",
+    "description": "Upload a ZIP file, browse its entries, and extract selected or all files for download.",
+    "shortDescription": "Extract files from a ZIP archive",
+    "inputTitle": "ZIP File",
+    "emptySelection": "No ZIP selected yet.",
+    "selectZip": "Select ZIP",
+    "clear": "Clear",
+    "filesCount": "files",
+    "directory": "Directory",
+    "optionsTitle": "Extract Options",
+    "extractAll": "Extract all files",
+    "extractAllDescription": "When disabled, choose individual entries to extract.",
+    "resultTitle": "Extracted Files",
+    "invalidZip": "Could not read this ZIP file.",
+    "extractFailed": "Failed to extract files from the ZIP.",
+    "toolInfo": {
+      "title": "What is Extract ZIP Archive?",
+      "description": "Open a ZIP archive in your browser, list its contents, and extract selected or all files. Extraction runs entirely client-side with JSZip."
+    }
   }
 }
